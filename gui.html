@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medicine Delivery System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    #logo {
+      margin: 20px auto;
+    }
+
+    .form-container {
+      background-color: #fff;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: inline-block;
+      text-align: left;
+    }
+
+    .thank-you-container {
+      text-align: center;
+      display: none;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <img id="logo" src="MEDI logo.png" alt="Project Logo" width="600">
+  
+  <div class="form-container" id="form-container">
+    <h2>Medicine Delivery</h2>
+    <label for="roomNumber">Select Room Number:</label>
+    <select id="roomNumber">
+      <!-- Add room options dynamically if needed -->
+      <option value="room1">Room 1</option>
+      <option value="room2">Room 2</option>
+      <option value="room3">Room 3</option>
+      <!-- Add more room options as needed -->
+    </select>
+
+    <label for="medicineType">Select Medicine Type:</label>
+    <select id="medicineType">
+      <!-- Add medicine options dynamically if needed -->
+      <option value="medicine1">Medicine 1</option>
+      <option value="medicine2">Medicine 2</option>
+      <!-- Add more medicine options as needed -->
+    </select>
+
+    <button onclick="submitOrder()">Submit Order</button>
+  </div>
+
+  <div class="thank-you-container" id="thank-you-container">
+    <h2>Thank You!</h2>
+    <p>Your order has been received.</p>
+    <button onclick="newOrder()">Make New Order</button>
+  </div>
+</div>
+
+<script>
+  function submitOrder() {
+    // Perform any necessary actions when the order is submitted
+    // For simplicity, just hiding the form and showing the thank you message in this example
+    document.getElementById('form-container').style.display = 'none';
+    document.getElementById('thank-you-container').style.display = 'block';
+  }
+
+  function newOrder() {
+    // Reset the form and show the form container again
+    document.getElementById('roomNumber').value = '';
+    document.getElementById('medicineType').value = '';
+    document.getElementById('form-container').style.display = 'inline-block';
+    document.getElementById('thank-you-container').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
